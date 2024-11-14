@@ -1,19 +1,24 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
             "name": "Python Debugger: Current File",
             "type": "debugpy",
             "request": "launch",
-            "program": "${file}",
+            "program": "${workspaceFolder}/.conda/bin/pipenv",
             "console": "integratedTerminal", 
             "args": [
-                "20241101",
-                "20241104"]
-
-        }
+                "run",
+                "python",
+                "-Xfrozen_modules=off",
+                "${file}",
+                "20241101", "20241103"
+            ],
+            "env": {
+                "PYDEVD_DISABLE_FILE_VALIDATION": "1"
+            }
+        },
     ]
 }
+
+

@@ -1,0 +1,4 @@
+.history/
+.venv/
+.conda/
+financialdata.egg-info/

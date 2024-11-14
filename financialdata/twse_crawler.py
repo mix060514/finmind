@@ -7,7 +7,50 @@ import pandas as pd
 import requests 
 from loguru import logger
 from pydantic import BaseModel
+from tqdm import tqdm
+from sqlalchemy import engine
 
+
+from financialdata.router import Router
+
+
+def clean_data(df: pd.DataFrame) -> pd.DataFrame:
+    df['dir'] = df['dir'].str.split('>').str[1].str.split('<').str[0]
+    df['change'] = df['dir'] + df['change']
+    df['change'] = df['change'].str.replace(' ', "").str.replace('X','').astype(float)
+    df = df.fillna('')
+    df = df.drop(['dir'], axis=1)
+    for col in ['trade_volume', 'transactions','trade_value','open','max','min','close','change']:
+        df[col] = (
+            df[col]
+            .astype(str)
+            .str.replace(",","")
+            .str.replace("X","")
+            .str.replace("+","")
+            .str.replace("----","0")
+            .str.replace("---","0")
+            .str.replace("--","0")
+        )
+    return df
+
+class TaiwanStockPrice(BaseModel):
+    stock_id: str
+    trade_volume: int
+    transactions: int
+    trade_value: int
+    open: float
+    max: float
+    min: float
+    close: float
+    change: float
+    date: str
+
+
+def check_schema(df):
+    df_dict = df.to_dict("records")
+    df_schema = [ TaiwanStockPrice(**dd).__dict__ for dd in df_dict ]
+    df = pd.DataFrame(df_schema)
+    return df
 
 def gen_date_list(start_date: str, end_date: str) -> typing.List[str]:
     start_date = datetime.datetime.strptime(start_date, '%Y%m%d')
@@ -92,19 +135,38 @@ def crawler_twse(date: str) -> pd.DataFrame:
 
 
 def main(start_date, end_date):
+    db_router = Router()
     date_list = gen_date_list(start_date, end_date)
-    for date in date_list:
+    for date in tqdm(date_list):
         logger.info(date)
         df = crawler_twse(date)
         if len(df) > 0:
-            # df = clean_data(df.copy())
-            # df = check_schema(df.copy()) 
-            df.to_csv(f'data/{date}.csv', index=False)
-    pass
+            df = clean_data(df.copy())
+            df = check_schema(df.copy())
+            logger.info(f'data shape: {df.shape}')
+            # df.to_csv(f'data/{date}.csv', index=False)
+            try:
+                df.to_sql(
+                    name='TaiwanStockPrice',
+                    # schema='financialdata',
+                    con = db_router.mysql_financialdata_conn,
+                    if_exists='append',
+                    index=False,
+                    chunksize=1000,
+                )
+                db_router.mysql_financialdata_conn.commit()
+                logger.info(f'{date} upload done')
+            except Exception as e:
+                logger.info(e)
 
 
 if __name__ == '__main__':
     start_date, end_date = sys.argv[1:]
     main(start_date, end_date)
+    db_router = Router()
+    connect = db_router.mysql_financialdata_conn
+    from sqlalchemy import text
+    result = connect.execute(text('select 1+1'))
+    print(result.fetchone())
     
     
