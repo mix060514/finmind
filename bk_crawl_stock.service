@@ -1,0 +1,12 @@
+[Unit]
+Description=Custom Service for Conda and Pipenv Commands
+After=network.target docker.service
+Requires=media-mix060514-EE9E67E99E67A933.mount
+
+[Service]
+Type=simple
+ExecStart=/media/mix060514/EE9E67E99E67A933/pj/finmind/crawl_stock.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

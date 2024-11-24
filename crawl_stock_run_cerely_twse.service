@@ -1,0 +1,16 @@
+[Unit]
+Description=Run Cerely TWSE
+After=network.target crawl_stock_setup.service
+Requires=crawl_stock_setup.service
+
+[Service]
+Type=simple
+WorkingDirectory=/media/mix060514/EE9E67E99E67A933/pj/finmind
+ExecStart=/bin/bash /media/mix060514/EE9E67E99E67A933/pj/finmind/crawl_stock_run_cerely_twse.sh
+Restart=always
+RestartSec=5s
+StandardOutput=append:/media/mix060514/EE9E67E99E67A933/pj/finmind/logs/run-cerely-twse.log
+StandardError=append:/media/mix060514/EE9E67E99E67A933/pj/finmind/logs/run-cerely-twse-error.log
+
+[Install]
+WantedBy=multi-user.target

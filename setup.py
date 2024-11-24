@@ -12,4 +12,7 @@ setup(
     version='0.0.1',
     description='financial mining',
     long_description=long_description,
+    packages=['financialdata'],
+
 )
+

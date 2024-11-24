@@ -1,18 +1,33 @@
 import datetime
-import sys
 import typing
 import time
 
 import pandas as pd
 import requests 
 from loguru import logger
-from pydantic import BaseModel
-from tqdm import tqdm
-from sqlalchemy import engine
+
+from financialdata.schema.dataset import check_schema
 
 
-from financialdata.router import Router
+def is_weekend(day: int) -> bool:
+    return day in [5, 6]
 
+def gen_task_parameter_list(
+        start_date: str,
+        end_date: str,
+) -> list[str]:
+    start_date = datetime.datetime.strptime(start_date, '%Y%m%d').date()
+    end_date = datetime.datetime.strptime(end_date, '%Y%m%d').date()
+    days = (end_date - start_date).days + 1
+    date_list = [
+        start_date + datetime.timedelta(days=day) for day in range(days)
+    ]
+    for date_list_ in date_list:
+        print(date_list_, date_list_.weekday())
+    date_list = [
+        dict(date=d.strftime('%Y%m%d'), data_source=data_source) for d in date_list for data_source in ['twse'] if not is_weekend(d.weekday())
+    ]
+    return date_list
 
 def clean_data(df: pd.DataFrame) -> pd.DataFrame:
     df['dir'] = df['dir'].str.split('>').str[1].str.split('<').str[0]
@@ -33,34 +48,8 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
         )
     return df
 
-class TaiwanStockPrice(BaseModel):
-    stock_id: str
-    trade_volume: int
-    transactions: int
-    trade_value: int
-    open: float
-    max: float
-    min: float
-    close: float
-    change: float
-    date: str
 
 
-def check_schema(df):
-    df_dict = df.to_dict("records")
-    df_schema = [ TaiwanStockPrice(**dd).__dict__ for dd in df_dict ]
-    df = pd.DataFrame(df_schema)
-    return df
-
-def gen_date_list(start_date: str, end_date: str) -> typing.List[str]:
-    start_date = datetime.datetime.strptime(start_date, '%Y%m%d')
-    end_date = datetime.datetime.strptime(end_date, '%Y%m%d')
-    date_list = []
-    while start_date <= end_date:
-        date_str = start_date.strftime('%Y%m%d')
-        date_list.append(date_str)
-        start_date += datetime.timedelta(days=1)
-    return date_list
 
 def twse_header() -> dict:
     return {
@@ -108,11 +97,13 @@ def crawler_twse(date: str) -> pd.DataFrame:
     """
     https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20241108&type=ALL&response=json&_=1731257834997
     """
+    logger.info('crawler_twse')
     url = (
         "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?"
         "date={date}&type=ALL&response=json"
     )
     url = url.format(date=date)
+    logger.info("crawler_twse url: {}".format(url))
     time.sleep(5)
     res = requests.get(url, headers=twse_header())
     if res.json()['stat'] == '很抱歉，沒有符合條件的資料!':
@@ -131,42 +122,24 @@ def crawler_twse(date: str) -> pd.DataFrame:
         return pd.DataFrame()
     df = colname_zh2en(df.copy(), colname)
     df['date'] = date
+    df = clean_data(df.copy())
     return df
 
 
-def main(start_date, end_date):
-    db_router = Router()
-    date_list = gen_date_list(start_date, end_date)
-    for date in tqdm(date_list):
-        logger.info(date)
+def crawler(parameter: dict[str, list[str|int|float]]) -> pd.DataFrame:
+    logger.info(parameter)
+    date = parameter.get('date', '')
+    data_source = parameter.get('data_source', '')
+    if data_source == 'twse':
         df = crawler_twse(date)
-        if len(df) > 0:
-            df = clean_data(df.copy())
-            df = check_schema(df.copy())
-            logger.info(f'data shape: {df.shape}')
-            # df.to_csv(f'data/{date}.csv', index=False)
-            try:
-                df.to_sql(
-                    name='TaiwanStockPrice',
-                    # schema='financialdata',
-                    con = db_router.mysql_financialdata_conn,
-                    if_exists='append',
-                    index=False,
-                    chunksize=1000,
-                )
-                db_router.mysql_financialdata_conn.commit()
-                logger.info(f'{date} upload done')
-            except Exception as e:
-                logger.info(e)
+    df = check_schema(df.copy(), dataset="TaiwanStockPrice")
+    return df
 
 
 if __name__ == '__main__':
-    start_date, end_date = sys.argv[1:]
-    main(start_date, end_date)
-    db_router = Router()
-    connect = db_router.mysql_financialdata_conn
-    from sqlalchemy import text
-    result = connect.execute(text('select 1+1'))
-    print(result.fetchone())
+    # start_date, end_date = sys.argv[1:]
+    start_date, end_date = '20241101', '20241110'
+    print(gen_task_parameter_list(start_date, end_date))
+
     
     

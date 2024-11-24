@@ -9,10 +9,13 @@ pandas = "*"
 requests = "*"
 pydantic = "*"
 loguru = "*"
-financialdata = {file = ".", editable = true}
 sqlalchemy = "*"
 tqdm = "*"
 pymysql = "*"
+celery = "*"
+pipenv = "*"
+financialdata = {file = ".", editable = true}
+apscheduler = "*"
 
 [dev-packages]
 

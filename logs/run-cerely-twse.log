@@ -1,0 +1,464 @@
+Conda env in /home/mix060514/pj/finmind/.conda activated
+pipenv run celery -A financialdata.tasks.worker worker --loglevel=info --concurrency=1 --hostname=%h -Q twse
+Loading .env environment variables...
+Error: the command celery could not be found within PATH or Pipfile's [scripts].
+make: *** [Makefile:22: run-cerely-twse] Error 1
+[2024-11-25 00:42:26,234: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/celery/worker/consumer/consumer.py", line 340, in start
+    blueprint.start(self)
+    ~~~~~~~~~~~~~~~^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/celery/bootsteps.py", line 116, in start
+    step.start(parent)
+    ~~~~~~~~~~^^^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/celery/worker/consumer/consumer.py", line 746, in start
+    c.loop(*c.loop_args())
+    ~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/celery/worker/loops.py", line 97, in asynloop
+    next(loop)
+    ~~~~^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/kombu/asynchronous/hub.py", line 373, in create_loop
+    cb(*cbargs)
+    ~~^^^^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/kombu/transport/base.py", line 248, in on_readable
+    reader(loop)
+    ~~~~~~^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/kombu/transport/base.py", line 230, in _read
+    drain_events(timeout=0)
+    ~~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/amqp/connection.py", line 526, in drain_events
+    while not self.blocking_read(timeout):
+              ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/amqp/connection.py", line 532, in blocking_read
+    return self.on_inbound_frame(frame)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/amqp/method_framing.py", line 53, in on_frame
+    callback(channel, method_sig, buf, None)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/amqp/connection.py", line 538, in on_inbound_method
+    return self.channels[channel_id].dispatch_method(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        method_sig, payload, content,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/amqp/abstract_channel.py", line 156, in dispatch_method
+    listener(*args)
+    ~~~~~~~~^^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/amqp/connection.py", line 668, in _on_close
+    raise error_for_code(reply_code, reply_text,
+                         (class_id, method_id), ConnectionError)
+amqp.exceptions.ConnectionForced: (0, 0): (320) CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'
+[2024-11-25 00:42:26,239: WARNING/MainProcess] /home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/celery/worker/consumer/consumer.py:391: CPendingDeprecationWarning: 
+In Celery 5.1 we introduced an optional breaking change which
+on connection loss cancels all currently executed tasks with late acknowledgement enabled.
+These tasks cannot be acknowledged as the connection is gone, and the tasks are automatically redelivered
+back to the queue. You can enable this behavior using the worker_cancel_long_running_tasks_on_connection_loss
+setting. In Celery 5.1 it is set to False by default. The setting will be set to True by default in Celery 6.0.
+
+  warnings.warn(CANCEL_TASKS_BY_DEFAULT, CPendingDeprecationWarning)
+
+[2024-11-25 00:42:26,252: WARNING/MainProcess] /home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2024-11-25 00:42:26,253: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 104] Connection reset by peer.
+Trying again in 2.00 seconds... (1/100)
+
+[2024-11-25 00:42:28,254: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 4.00 seconds... (2/100)
+
+[2024-11-25 00:42:32,256: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 6.00 seconds... (3/100)
+
+[2024-11-25 00:42:38,259: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 8.00 seconds... (4/100)
+
+[2024-11-25 00:42:46,262: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 10.00 seconds... (5/100)
+
+[2024-11-25 00:42:56,266: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 12.00 seconds... (6/100)
+
+[2024-11-25 00:43:08,269: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 14.00 seconds... (7/100)
+
+[2024-11-25 00:43:22,271: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 16.00 seconds... (8/100)
+
+[2024-11-25 00:43:38,274: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 18.00 seconds... (9/100)
+
+[2024-11-25 00:43:56,278: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 20.00 seconds... (10/100)
+
+[2024-11-25 00:44:16,282: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 22.00 seconds... (11/100)
+
+[2024-11-25 00:44:38,286: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 24.00 seconds... (12/100)
+
+[2024-11-25 00:45:02,291: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 26.00 seconds... (13/100)
+
+[2024-11-25 00:45:28,297: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 28.00 seconds... (14/100)
+
+[2024-11-25 00:45:56,302: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 30.00 seconds... (15/100)
+
+[2024-11-25 00:46:26,307: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 00:46:58,313: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 00:47:30,319: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 00:48:02,325: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 00:48:34,330: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 00:49:06,337: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 00:49:38,343: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 00:50:10,350: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 00:50:42,357: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 00:51:14,363: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 00:51:46,371: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 00:52:18,379: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 00:52:50,385: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 00:53:22,394: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 00:53:54,400: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 00:54:26,410: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 00:54:58,417: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 00:55:30,426: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 00:56:02,434: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 00:56:34,442: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 00:57:06,451: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 00:57:38,460: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 00:58:10,465: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 00:58:42,473: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 00:59:14,481: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 00:59:46,488: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:00:18,495: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:00:50,501: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:01:22,507: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:01:54,514: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:02:26,521: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:02:58,529: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:03:30,537: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:04:02,546: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:04:34,552: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:05:06,559: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:05:38,565: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:06:10,571: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:06:42,578: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:07:14,584: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:07:46,592: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:08:18,598: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:08:50,603: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:09:22,609: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:09:54,614: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:10:26,619: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:10:58,623: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:11:30,627: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:12:02,632: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:12:34,637: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:13:06,642: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:13:38,647: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:14:10,652: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:14:42,658: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:15:14,663: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:15:46,669: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:16:18,675: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:16:50,680: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:17:22,686: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:17:54,692: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:18:26,698: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:18:58,704: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:19:30,711: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:20:02,717: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:20:34,723: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:21:06,729: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:21:38,735: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:22:10,741: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:22:42,747: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:23:14,753: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:23:46,759: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:24:18,765: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:24:50,771: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:25:22,777: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:25:54,784: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:26:26,790: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:26:58,796: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:27:30,802: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:28:02,808: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:28:34,814: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:29:06,819: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:29:38,824: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:30:10,829: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:30:42,835: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:31:14,840: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 32.00 seconds... (16/100)
+
+[2024-11-25 01:31:46,845: CRITICAL/MainProcess] Unrecoverable error: OperationalError('[Errno 111] Connection refused')
+Traceback (most recent call last):
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/kombu/connection.py", line 472, in _reraise_as_library_errors
+    yield
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/kombu/connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+        self._connection_factory, self.recoverable_connection_errors,
+    ...<2 lines>...
+        callback, timeout=timeout
+    )
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/kombu/utils/functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/kombu/connection.py", line 934, in _connection_factory
+    self._connection = self._establish_connection()
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/kombu/connection.py", line 860, in _establish_connection
+    conn = self.transport.establish_connection()
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/kombu/transport/pyamqp.py", line 203, in establish_connection
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/amqp/connection.py", line 324, in connect
+    self.transport.connect()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/amqp/transport.py", line 132, in connect
+    self._connect(self.host, self.port, self.connect_timeout)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/amqp/transport.py", line 187, in _connect
+    self.sock.connect(sa)
+    ~~~~~~~~~~~~~~~~~^^^^
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/celery/worker/worker.py", line 202, in start
+    self.blueprint.start(self)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/celery/bootsteps.py", line 116, in start
+    step.start(parent)
+    ~~~~~~~~~~^^^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/celery/bootsteps.py", line 365, in start
+    return self.obj.start()
+           ~~~~~~~~~~~~~~^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/celery/worker/consumer/consumer.py", line 340, in start
+    blueprint.start(self)
+    ~~~~~~~~~~~~~~~^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/celery/bootsteps.py", line 116, in start
+    step.start(parent)
+    ~~~~~~~~~~^^^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/celery/worker/consumer/connection.py", line 21, in start
+    c.connection = c.connect()
+                   ~~~~~~~~~^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/celery/worker/consumer/consumer.py", line 470, in connect
+    conn = self.connection_for_read(heartbeat=self.amqheartbeat)
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/celery/worker/consumer/consumer.py", line 476, in connection_for_read
+    return self.ensure_connected(
+           ~~~~~~~~~~~~~~~~~~~~~^
+        self.app.connection_for_read(heartbeat=heartbeat))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/celery/worker/consumer/consumer.py", line 527, in ensure_connected
+    conn = conn.ensure_connection(
+        _error_handler, self.app.conf.broker_connection_max_retries,
+        callback=maybe_shutdown,
+    )
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/kombu/connection.py", line 406, in ensure_connection
+    self._ensure_connection(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/kombu/connection.py", line 458, in _ensure_connection
+    with ctx():
+         ~~~^^
+  File "/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/kombu/connection.py", line 476, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: [Errno 111] Connection refused
+--- Logging error ---
+Exception ignored in: <function _ConnectionRecord.checkout.<locals>.<lambda> at 0x7a6f81e365c0>
+Traceback (most recent call last):
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/sqlalchemy/pool/base.py", line 729, in <lambda>
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/sqlalchemy/pool/base.py", line 1008, in _finalize_fairy
+  File "/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/lib/python3.13/logging/__init__.py", line 1548, in error
+  File "/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/lib/python3.13/logging/__init__.py", line 1664, in _log
+  File "/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/lib/python3.13/logging/__init__.py", line 1680, in handle
+  File "/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/lib/python3.13/logging/__init__.py", line 1736, in callHandlers
+  File "/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/lib/python3.13/logging/__init__.py", line 1026, in handle
+  File "/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/lib/python3.13/logging/__init__.py", line 1158, in emit
+  File "/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/lib/python3.13/logging/__init__.py", line 1075, in handleError
+  File "/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/lib/python3.13/traceback.py", line 129, in print_exception
+  File "/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/lib/python3.13/traceback.py", line 1044, in __init__
+  File "/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/lib/python3.13/traceback.py", line 492, in _extract_from_extended_frame_gen
+  File "/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/lib/python3.13/traceback.py", line 369, in line
+  File "/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/lib/python3.13/traceback.py", line 350, in _set_lines
+  File "/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/lib/python3.13/linecache.py", line 25, in getline
+  File "/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/lib/python3.13/linecache.py", line 41, in getlines
+  File "/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/lib/python3.13/linecache.py", line 88, in updatecache
+ImportError: sys.meta_path is None, Python is likely shutting down
+make: *** [Makefile:22: run-cerely-twse] Error 1
