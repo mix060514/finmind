@@ -4,10 +4,10 @@ Loading .env environment variables...
  
  -------------- celery@mix060514-Predator-PH317-53 v5.4.0 (opalescent)
 --- ***** ----- 
--- ******* ---- Linux-6.8.0-49-generic-x86_64-with-glibc2.39 2024-11-30 11:17:52
+-- ******* ---- Linux-6.8.0-49-generic-x86_64-with-glibc2.39 2024-12-01 00:01:09
 - *** --- * --- 
 - ** ---------- [config]
-- ** ---------- .> app:         task:0x78822d1d5550
+- ** ---------- .> app:         task:0x791d2e411550
 - ** ---------- .> transport:   amqp://worker:**@127.0.0.1:5672//
 - ** ---------- .> results:     disabled://
 - *** --- * --- .> concurrency: 1 (prefork)
@@ -20,26 +20,107 @@ Loading .env environment variables...
 [tasks]
   . financialdata.tasks.task.crawler
 
-[2024-11-30 11:17:52,798: WARNING/MainProcess] /home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+[2024-12-01 00:01:10,008: WARNING/MainProcess] /home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
 whether broker connection retries are made during startup in Celery 6.0 and above.
 If you wish to retain the existing behavior for retrying connections on startup,
 you should set broker_connection_retry_on_startup to True.
   warnings.warn(
 
-[2024-11-30 11:17:52,799: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 104] Connection reset by peer.
+[2024-12-01 00:01:10,011: INFO/MainProcess] Connected to amqp://worker:**@127.0.0.1:5672//
+[2024-12-01 00:01:10,012: WARNING/MainProcess] /home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2024-12-01 00:01:10,014: INFO/MainProcess] mingle: searching for neighbors
+[2024-12-01 00:01:11,027: INFO/MainProcess] mingle: sync with 1 nodes
+[2024-12-01 00:01:11,027: INFO/MainProcess] mingle: sync complete
+[2024-12-01 00:01:11,038: INFO/MainProcess] celery@mix060514-Predator-PH317-53 ready.
+[2024-12-01 00:01:15,557: INFO/MainProcess] Events of group {task} enabled by remote.
+[2024-12-01 00:01:41,261: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/celery/worker/consumer/consumer.py", line 340, in start
+    blueprint.start(self)
+    ~~~~~~~~~~~~~~~^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/celery/bootsteps.py", line 116, in start
+    step.start(parent)
+    ~~~~~~~~~~^^^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/celery/worker/consumer/consumer.py", line 746, in start
+    c.loop(*c.loop_args())
+    ~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/celery/worker/loops.py", line 97, in asynloop
+    next(loop)
+    ~~~~^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/kombu/asynchronous/hub.py", line 373, in create_loop
+    cb(*cbargs)
+    ~~^^^^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/kombu/transport/base.py", line 248, in on_readable
+    reader(loop)
+    ~~~~~~^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/kombu/transport/base.py", line 230, in _read
+    drain_events(timeout=0)
+    ~~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/amqp/connection.py", line 526, in drain_events
+    while not self.blocking_read(timeout):
+              ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/amqp/connection.py", line 532, in blocking_read
+    return self.on_inbound_frame(frame)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/amqp/method_framing.py", line 53, in on_frame
+    callback(channel, method_sig, buf, None)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/amqp/connection.py", line 538, in on_inbound_method
+    return self.channels[channel_id].dispatch_method(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        method_sig, payload, content,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/amqp/abstract_channel.py", line 156, in dispatch_method
+    listener(*args)
+    ~~~~~~~~^^^^^^^
+  File "/home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/amqp/connection.py", line 668, in _on_close
+    raise error_for_code(reply_code, reply_text,
+                         (class_id, method_id), ConnectionError)
+amqp.exceptions.ConnectionForced: (0, 0): (320) CONNECTION_FORCED - broker forced connection closure with reason 'shutdown'
+[2024-12-01 00:01:41,267: WARNING/MainProcess] /home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/celery/worker/consumer/consumer.py:391: CPendingDeprecationWarning: 
+In Celery 5.1 we introduced an optional breaking change which
+on connection loss cancels all currently executed tasks with late acknowledgement enabled.
+These tasks cannot be acknowledged as the connection is gone, and the tasks are automatically redelivered
+back to the queue. You can enable this behavior using the worker_cancel_long_running_tasks_on_connection_loss
+setting. In Celery 5.1 it is set to False by default. The setting will be set to True by default in Celery 6.0.
+
+  warnings.warn(CANCEL_TASKS_BY_DEFAULT, CPendingDeprecationWarning)
+
+[2024-12-01 00:01:41,268: WARNING/MainProcess] /home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2024-12-01 00:01:41,269: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 104] Connection reset by peer.
 Trying again in 2.00 seconds... (1/100)
 
-[2024-11-30 11:17:54,800: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 104] Connection reset by peer.
+[2024-12-01 00:01:43,269: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
 Trying again in 4.00 seconds... (2/100)
 
-[2024-11-30 11:17:58,818: INFO/MainProcess] Connected to amqp://worker:**@127.0.0.1:5672//
-[2024-11-30 11:17:58,820: WARNING/MainProcess] /home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+[2024-12-01 00:01:47,270: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 6.00 seconds... (3/100)
+
+[2024-12-01 00:01:53,272: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 104] Connection reset by peer.
+Trying again in 8.00 seconds... (4/100)
+
+[2024-12-01 00:02:01,274: ERROR/MainProcess] consumer: Cannot connect to amqp://worker:**@127.0.0.1:5672//: [Errno 104] Connection reset by peer.
+Trying again in 10.00 seconds... (5/100)
+
+[2024-12-01 00:02:11,285: INFO/MainProcess] Connected to amqp://worker:**@127.0.0.1:5672//
+[2024-12-01 00:02:11,285: WARNING/MainProcess] /home/mix060514/.local/share/virtualenvs/finmind-tvQprbtk/lib/python3.13/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
 whether broker connection retries are made during startup in Celery 6.0 and above.
 If you wish to retain the existing behavior for retrying connections on startup,
 you should set broker_connection_retry_on_startup to True.
   warnings.warn(
 
-[2024-11-30 11:17:58,828: INFO/MainProcess] mingle: searching for neighbors
-[2024-11-30 11:17:59,873: INFO/MainProcess] mingle: all alone
-[2024-11-30 11:17:59,913: INFO/MainProcess] celery@mix060514-Predator-PH317-53 ready.
-[2024-11-30 11:18:03,651: INFO/MainProcess] Events of group {task} enabled by remote.
+[2024-12-01 00:02:11,289: INFO/MainProcess] mingle: searching for neighbors
+[2024-12-01 00:02:12,301: INFO/MainProcess] mingle: all alone
+[2024-12-01 00:02:14,597: INFO/MainProcess] sync with celery@twse

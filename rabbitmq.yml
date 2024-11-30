@@ -10,7 +10,7 @@ services:
       RABBITMQ_DEFAULT_PASS: "worker"
       RABBITMQ_DEFAULT_VHOST: "/"
     networks:
-      - dev2
+      - my_network
   flower:
     image: 'mher/flower:0.9.5'
     command: ['flower','--broker=amqp://worker:worker@rabbitmq', '--port=5555']
@@ -19,7 +19,8 @@ services:
     depends_on:
       - rabbitmq
     networks:
-      - dev2
+      - my_network
 
 networks:
-  dev2:
+  my_network:
+    external: true

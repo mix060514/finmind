@@ -13,7 +13,7 @@ services:
     volumes:
       - mysql:/var/lib/mysql
     networks:
-      - dev
+      - my_network
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:5.1.0
     links:
@@ -23,10 +23,11 @@ services:
     depends_on:
       - mysql
     networks:
-      - dev
+      - my_network
 
 networks:
-  dev:
+  my_network:
+    external: true
 
 volumes:
   mysql:
