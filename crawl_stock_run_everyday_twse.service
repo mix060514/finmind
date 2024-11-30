@@ -9,6 +9,8 @@ WorkingDirectory=/media/mix060514/EE9E67E99E67A933/pj/finmind
 ExecStart=/bin/bash /media/mix060514/EE9E67E99E67A933/pj/finmind/crawl_stock_run_everyday_twse.sh
 Restart=always
 RestartSec=5s
+User=mix060514
+Environment="PATH=/home/mix060514/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 StandardOutput=append:/media/mix060514/EE9E67E99E67A933/pj/finmind/logs/run-everyday-twse.log
 StandardError=append:/media/mix060514/EE9E67E99E67A933/pj/finmind/logs/run-everyday-twse-error.log
 

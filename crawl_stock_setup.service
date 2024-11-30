@@ -7,6 +7,9 @@ Type=oneshot
 WorkingDirectory=/media/mix060514/EE9E67E99E67A933/pj/finmind
 ExecStart=/bin/bash /media/mix060514/EE9E67E99E67A933/pj/finmind/crawl_stock_setup.sh
 RemainAfterExit=true
+User=mix060514
+Environment="PATH=/home/mix060514/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
 
 [Install]
 WantedBy=multi-user.target

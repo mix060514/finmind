@@ -11,6 +11,9 @@ Restart=always
 RestartSec=5s
 StandardOutput=append:/media/mix060514/EE9E67E99E67A933/pj/finmind/logs/run-cerely-twse.log
 StandardError=append:/media/mix060514/EE9E67E99E67A933/pj/finmind/logs/run-cerely-twse-error.log
+User=mix060514
+Environment="PATH=/home/mix060514/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
 
 [Install]
 WantedBy=multi-user.target

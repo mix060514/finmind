@@ -20,7 +20,6 @@ def run_initial_task_if_needed():
     now = datetime.datetime.now()
     target_time = now.replace(hour=15, minute=0, second=0, microsecond=0)
     logger.info(f"Current time: {now}, Target time: {target_time}")
-    sent_crawler_task()
     if now > target_time:  # If the current time is after 15:00
         sent_crawler_task()
         logger.info("Running initial task as current time is after 15:00.")
@@ -40,8 +39,6 @@ def main():
     logger.info("sent_crawler_task")
     scheduler.start()
     run_initial_task_if_needed()
-    logger.info("bbbbbbbbbbbbbbb")
-    print('aaa')
     
 
 if __name__ == "__main__":

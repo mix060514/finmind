@@ -13,9 +13,9 @@ CONDA_ENV="/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda"
 # Activate conda
 source "$CONDA_INIT"
 cd "$SCRIPT_DIR"
-conda activate "./.conda"
+conda activate "$CONDA_ENV"
 echo "Conda env in $SCRIPT_DIR/.conda activated"
-export PATH="$CONDA_ENV/bin:$PATH"
+# export PATH="$CONDA_ENV/bin:$PATH"
 
 # Start the process
 make run-cerely-twse >> "$LOG_DIR/run-cerely-twse.log" 2>&1

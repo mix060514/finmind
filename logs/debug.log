@@ -1,0 +1,443 @@
+Starting script at Mon Nov 25 11:02:47 PM CST 2024
+SCRIPT_DIR: /home/mix060514/pj/finmind
+LOG_DIR: /home/mix060514/pj/finmind/logs
+CONDA_ENV: /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+Conda environment activated
+
+     active environment : /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+    active env location : /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+            shell level : 1
+       user config file : /home/mix060514/.condarc
+ populated config files : /home/mix060514/miniconda3/.condarc
+          conda version : 24.9.2
+    conda-build version : not installed
+         python version : 3.12.7.final.0
+                 solver : libmamba (default)
+       virtual packages : __archspec=1=skylake
+                          __conda=24.9.2=0
+                          __cuda=12.4=0
+                          __glibc=2.39=0
+                          __linux=6.8.0=0
+                          __unix=0=0
+       base environment : /home/mix060514/miniconda3  (writable)
+      conda av data dir : /home/mix060514/miniconda3/etc/conda
+  conda av metadata url : None
+           channel URLs : https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /home/mix060514/miniconda3/pkgs
+                          /home/mix060514/.conda/pkgs
+       envs directories : /home/mix060514/miniconda3/envs
+                          /home/mix060514/.conda/envs
+               platform : linux-64
+             user-agent : conda/24.9.2 requests/2.32.3 CPython/3.12.7 Linux/6.8.0-49-generic ubuntu/24.04.1 glibc/2.39 solver/libmamba conda-libmamba-solver/24.9.0 libmambapy/1.5.8 aau/0.4.4 c/. s/. e/.
+                UID:GID : 1000:1000
+             netrc file : None
+           offline mode : False
+
+
+/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/bin/python
+Process finished at Mon Nov 25 11:02:49 PM CST 2024
+Starting script at Mon Nov 25 11:03:33 PM CST 2024
+SCRIPT_DIR: /home/mix060514/pj/finmind
+LOG_DIR: /home/mix060514/pj/finmind/logs
+CONDA_ENV: /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+Conda environment activated
+
+     active environment : /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+    active env location : /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+            shell level : 1
+       user config file : /home/mix060514/.condarc
+ populated config files : /home/mix060514/miniconda3/.condarc
+          conda version : 24.9.2
+    conda-build version : not installed
+         python version : 3.12.7.final.0
+                 solver : libmamba (default)
+       virtual packages : __archspec=1=skylake
+                          __conda=24.9.2=0
+                          __cuda=12.4=0
+                          __glibc=2.39=0
+                          __linux=6.8.0=0
+                          __unix=0=0
+       base environment : /home/mix060514/miniconda3  (writable)
+      conda av data dir : /home/mix060514/miniconda3/etc/conda
+  conda av metadata url : None
+           channel URLs : https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /home/mix060514/miniconda3/pkgs
+                          /home/mix060514/.conda/pkgs
+       envs directories : /home/mix060514/miniconda3/envs
+                          /home/mix060514/.conda/envs
+               platform : linux-64
+             user-agent : conda/24.9.2 requests/2.32.3 CPython/3.12.7 Linux/6.8.0-49-generic ubuntu/24.04.1 glibc/2.39 solver/libmamba conda-libmamba-solver/24.9.0 libmambapy/1.5.8 aau/0.4.4 c/. s/. e/.
+                UID:GID : 1000:1000
+             netrc file : None
+           offline mode : False
+
+
+/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/bin/python
+Starting script at Mon Nov 25 11:04:17 PM CST 2024
+SCRIPT_DIR: /home/mix060514/pj/finmind
+LOG_DIR: /home/mix060514/pj/finmind/logs
+CONDA_ENV: /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+Conda environment activated
+
+     active environment : /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+    active env location : /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+            shell level : 1
+       user config file : /home/mix060514/.condarc
+ populated config files : /home/mix060514/miniconda3/.condarc
+          conda version : 24.9.2
+    conda-build version : not installed
+         python version : 3.12.7.final.0
+                 solver : libmamba (default)
+       virtual packages : __archspec=1=skylake
+                          __conda=24.9.2=0
+                          __cuda=12.4=0
+                          __glibc=2.39=0
+                          __linux=6.8.0=0
+                          __unix=0=0
+       base environment : /home/mix060514/miniconda3  (writable)
+      conda av data dir : /home/mix060514/miniconda3/etc/conda
+  conda av metadata url : None
+           channel URLs : https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /home/mix060514/miniconda3/pkgs
+                          /home/mix060514/.conda/pkgs
+       envs directories : /home/mix060514/miniconda3/envs
+                          /home/mix060514/.conda/envs
+               platform : linux-64
+             user-agent : conda/24.9.2 requests/2.32.3 CPython/3.12.7 Linux/6.8.0-49-generic ubuntu/24.04.1 glibc/2.39 solver/libmamba conda-libmamba-solver/24.9.0 libmambapy/1.5.8 aau/0.4.4 c/. s/. e/.
+                UID:GID : 1000:1000
+             netrc file : None
+           offline mode : False
+
+
+/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/bin/python
+Starting script at Mon Nov 25 11:05:49 PM CST 2024
+SCRIPT_DIR: /home/mix060514/pj/finmind
+LOG_DIR: /home/mix060514/pj/finmind/logs
+CONDA_ENV: /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+Conda environment activated
+
+     active environment : /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+    active env location : /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+            shell level : 1
+       user config file : /home/mix060514/.condarc
+ populated config files : /home/mix060514/miniconda3/.condarc
+          conda version : 24.9.2
+    conda-build version : not installed
+         python version : 3.12.7.final.0
+                 solver : libmamba (default)
+       virtual packages : __archspec=1=skylake
+                          __conda=24.9.2=0
+                          __cuda=12.4=0
+                          __glibc=2.39=0
+                          __linux=6.8.0=0
+                          __unix=0=0
+       base environment : /home/mix060514/miniconda3  (writable)
+      conda av data dir : /home/mix060514/miniconda3/etc/conda
+  conda av metadata url : None
+           channel URLs : https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /home/mix060514/miniconda3/pkgs
+                          /home/mix060514/.conda/pkgs
+       envs directories : /home/mix060514/miniconda3/envs
+                          /home/mix060514/.conda/envs
+               platform : linux-64
+             user-agent : conda/24.9.2 requests/2.32.3 CPython/3.12.7 Linux/6.8.0-49-generic ubuntu/24.04.1 glibc/2.39 solver/libmamba conda-libmamba-solver/24.9.0 libmambapy/1.5.8 aau/0.4.4 c/. s/. e/.
+                UID:GID : 1000:1000
+             netrc file : None
+           offline mode : False
+
+
+/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/bin/python
+Process finished at Mon Nov 25 11:05:58 PM CST 2024
+Starting script at Mon Nov 25 11:06:03 PM CST 2024
+SCRIPT_DIR: /home/mix060514/pj/finmind
+LOG_DIR: /home/mix060514/pj/finmind/logs
+CONDA_ENV: /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+Conda environment activated
+
+     active environment : /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+    active env location : /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+            shell level : 1
+       user config file : /home/mix060514/.condarc
+ populated config files : /home/mix060514/miniconda3/.condarc
+          conda version : 24.9.2
+    conda-build version : not installed
+         python version : 3.12.7.final.0
+                 solver : libmamba (default)
+       virtual packages : __archspec=1=skylake
+                          __conda=24.9.2=0
+                          __cuda=12.4=0
+                          __glibc=2.39=0
+                          __linux=6.8.0=0
+                          __unix=0=0
+       base environment : /home/mix060514/miniconda3  (writable)
+      conda av data dir : /home/mix060514/miniconda3/etc/conda
+  conda av metadata url : None
+           channel URLs : https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /home/mix060514/miniconda3/pkgs
+                          /home/mix060514/.conda/pkgs
+       envs directories : /home/mix060514/miniconda3/envs
+                          /home/mix060514/.conda/envs
+               platform : linux-64
+             user-agent : conda/24.9.2 requests/2.32.3 CPython/3.12.7 Linux/6.8.0-49-generic ubuntu/24.04.1 glibc/2.39 solver/libmamba conda-libmamba-solver/24.9.0 libmambapy/1.5.8 aau/0.4.4 c/. s/. e/.
+                UID:GID : 1000:1000
+             netrc file : None
+           offline mode : False
+
+
+/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/bin/python
+Starting script at Tue Nov 26 07:48:44 PM CST 2024
+SCRIPT_DIR: /home/mix060514/pj/finmind
+LOG_DIR: /home/mix060514/pj/finmind/logs
+CONDA_ENV: /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+Conda environment activated
+
+     active environment : /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+    active env location : /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+            shell level : 1
+       user config file : /home/mix060514/.condarc
+ populated config files : /home/mix060514/miniconda3/.condarc
+          conda version : 24.9.2
+    conda-build version : not installed
+         python version : 3.12.7.final.0
+                 solver : libmamba (default)
+       virtual packages : __archspec=1=skylake
+                          __conda=24.9.2=0
+                          __cuda=12.4=0
+                          __glibc=2.39=0
+                          __linux=6.8.0=0
+                          __unix=0=0
+       base environment : /home/mix060514/miniconda3  (writable)
+      conda av data dir : /home/mix060514/miniconda3/etc/conda
+  conda av metadata url : None
+           channel URLs : https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /home/mix060514/miniconda3/pkgs
+                          /home/mix060514/.conda/pkgs
+       envs directories : /home/mix060514/miniconda3/envs
+                          /home/mix060514/.conda/envs
+               platform : linux-64
+             user-agent : conda/24.9.2 requests/2.32.3 CPython/3.12.7 Linux/6.8.0-49-generic ubuntu/24.04.1 glibc/2.39 solver/libmamba conda-libmamba-solver/24.9.0 libmambapy/1.5.8 aau/0.4.4 c/. s/. e/.
+                UID:GID : 1000:1000
+             netrc file : None
+           offline mode : False
+
+
+/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/bin/python
+Starting script at Thu Nov 28 04:13:39 AM CST 2024
+SCRIPT_DIR: /home/mix060514/pj/finmind
+LOG_DIR: /home/mix060514/pj/finmind/logs
+CONDA_ENV: /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+Conda environment activated
+
+     active environment : /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+    active env location : /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+            shell level : 1
+       user config file : /home/mix060514/.condarc
+ populated config files : /home/mix060514/miniconda3/.condarc
+          conda version : 24.9.2
+    conda-build version : not installed
+         python version : 3.12.7.final.0
+                 solver : libmamba (default)
+       virtual packages : __archspec=1=skylake
+                          __conda=24.9.2=0
+                          __cuda=12.4=0
+                          __glibc=2.39=0
+                          __linux=6.8.0=0
+                          __unix=0=0
+       base environment : /home/mix060514/miniconda3  (writable)
+      conda av data dir : /home/mix060514/miniconda3/etc/conda
+  conda av metadata url : None
+           channel URLs : https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /home/mix060514/miniconda3/pkgs
+                          /home/mix060514/.conda/pkgs
+       envs directories : /home/mix060514/miniconda3/envs
+                          /home/mix060514/.conda/envs
+               platform : linux-64
+             user-agent : conda/24.9.2 requests/2.32.3 CPython/3.12.7 Linux/6.8.0-49-generic ubuntu/24.04.1 glibc/2.39 solver/libmamba conda-libmamba-solver/24.9.0 libmambapy/1.5.8 aau/0.4.4 c/. s/. e/.
+                UID:GID : 1000:1000
+             netrc file : None
+           offline mode : False
+
+
+/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/bin/python
+Starting script at Thu Nov 28 09:15:45 PM CST 2024
+SCRIPT_DIR: /home/mix060514/pj/finmind
+LOG_DIR: /home/mix060514/pj/finmind/logs
+CONDA_ENV: /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+Conda environment activated
+
+     active environment : /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+    active env location : /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+            shell level : 1
+       user config file : /home/mix060514/.condarc
+ populated config files : /home/mix060514/miniconda3/.condarc
+          conda version : 24.9.2
+    conda-build version : not installed
+         python version : 3.12.7.final.0
+                 solver : libmamba (default)
+       virtual packages : __archspec=1=skylake
+                          __conda=24.9.2=0
+                          __cuda=12.4=0
+                          __glibc=2.39=0
+                          __linux=6.8.0=0
+                          __unix=0=0
+       base environment : /home/mix060514/miniconda3  (writable)
+      conda av data dir : /home/mix060514/miniconda3/etc/conda
+  conda av metadata url : None
+           channel URLs : https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /home/mix060514/miniconda3/pkgs
+                          /home/mix060514/.conda/pkgs
+       envs directories : /home/mix060514/miniconda3/envs
+                          /home/mix060514/.conda/envs
+               platform : linux-64
+             user-agent : conda/24.9.2 requests/2.32.3 CPython/3.12.7 Linux/6.8.0-49-generic ubuntu/24.04.1 glibc/2.39 solver/libmamba conda-libmamba-solver/24.9.0 libmambapy/1.5.8 aau/0.4.4 c/. s/. e/.
+                UID:GID : 1000:1000
+             netrc file : None
+           offline mode : False
+
+
+/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/bin/python
+Starting script at Fri Nov 29 08:01:59 PM CST 2024
+SCRIPT_DIR: /home/mix060514/pj/finmind
+LOG_DIR: /home/mix060514/pj/finmind/logs
+CONDA_ENV: /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+Conda environment activated
+
+     active environment : /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+    active env location : /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+            shell level : 1
+       user config file : /home/mix060514/.condarc
+ populated config files : /home/mix060514/miniconda3/.condarc
+          conda version : 24.9.2
+    conda-build version : not installed
+         python version : 3.12.7.final.0
+                 solver : libmamba (default)
+       virtual packages : __archspec=1=skylake
+                          __conda=24.9.2=0
+                          __cuda=12.4=0
+                          __glibc=2.39=0
+                          __linux=6.8.0=0
+                          __unix=0=0
+       base environment : /home/mix060514/miniconda3  (writable)
+      conda av data dir : /home/mix060514/miniconda3/etc/conda
+  conda av metadata url : None
+           channel URLs : https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /home/mix060514/miniconda3/pkgs
+                          /home/mix060514/.conda/pkgs
+       envs directories : /home/mix060514/miniconda3/envs
+                          /home/mix060514/.conda/envs
+               platform : linux-64
+             user-agent : conda/24.9.2 requests/2.32.3 CPython/3.12.7 Linux/6.8.0-49-generic ubuntu/24.04.1 glibc/2.39 solver/libmamba conda-libmamba-solver/24.9.0 libmambapy/1.5.8 aau/0.4.4 c/. s/. e/.
+                UID:GID : 1000:1000
+             netrc file : None
+           offline mode : False
+
+
+/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/bin/python
+Process finished at Fri Nov 29 08:02:10 PM CST 2024
+Starting script at Fri Nov 29 08:02:16 PM CST 2024
+SCRIPT_DIR: /home/mix060514/pj/finmind
+LOG_DIR: /home/mix060514/pj/finmind/logs
+CONDA_ENV: /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+Conda environment activated
+
+     active environment : /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+    active env location : /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+            shell level : 1
+       user config file : /home/mix060514/.condarc
+ populated config files : /home/mix060514/miniconda3/.condarc
+          conda version : 24.9.2
+    conda-build version : not installed
+         python version : 3.12.7.final.0
+                 solver : libmamba (default)
+       virtual packages : __archspec=1=skylake
+                          __conda=24.9.2=0
+                          __cuda=12.4=0
+                          __glibc=2.39=0
+                          __linux=6.8.0=0
+                          __unix=0=0
+       base environment : /home/mix060514/miniconda3  (writable)
+      conda av data dir : /home/mix060514/miniconda3/etc/conda
+  conda av metadata url : None
+           channel URLs : https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /home/mix060514/miniconda3/pkgs
+                          /home/mix060514/.conda/pkgs
+       envs directories : /home/mix060514/miniconda3/envs
+                          /home/mix060514/.conda/envs
+               platform : linux-64
+             user-agent : conda/24.9.2 requests/2.32.3 CPython/3.12.7 Linux/6.8.0-49-generic ubuntu/24.04.1 glibc/2.39 solver/libmamba conda-libmamba-solver/24.9.0 libmambapy/1.5.8 aau/0.4.4 c/. s/. e/.
+                UID:GID : 1000:1000
+             netrc file : None
+           offline mode : False
+
+
+/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/bin/python
+Starting script at Sat Nov 30 11:17:48 AM CST 2024
+SCRIPT_DIR: /home/mix060514/pj/finmind
+LOG_DIR: /home/mix060514/pj/finmind/logs
+CONDA_ENV: /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+Conda environment activated
+
+     active environment : /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+    active env location : /media/mix060514/EE9E67E99E67A933/pj/finmind/.conda
+            shell level : 1
+       user config file : /home/mix060514/.condarc
+ populated config files : /home/mix060514/miniconda3/.condarc
+          conda version : 24.9.2
+    conda-build version : not installed
+         python version : 3.12.7.final.0
+                 solver : libmamba (default)
+       virtual packages : __archspec=1=skylake
+                          __conda=24.9.2=0
+                          __cuda=12.4=0
+                          __glibc=2.39=0
+                          __linux=6.8.0=0
+                          __unix=0=0
+       base environment : /home/mix060514/miniconda3  (writable)
+      conda av data dir : /home/mix060514/miniconda3/etc/conda
+  conda av metadata url : None
+           channel URLs : https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /home/mix060514/miniconda3/pkgs
+                          /home/mix060514/.conda/pkgs
+       envs directories : /home/mix060514/miniconda3/envs
+                          /home/mix060514/.conda/envs
+               platform : linux-64
+             user-agent : conda/24.9.2 requests/2.32.3 CPython/3.12.7 Linux/6.8.0-49-generic ubuntu/24.04.1 glibc/2.39 solver/libmamba conda-libmamba-solver/24.9.0 libmambapy/1.5.8 aau/0.4.4 c/. s/. e/.
+                UID:GID : 1000:1000
+             netrc file : None
+           offline mode : False
+
+
+/media/mix060514/EE9E67E99E67A933/pj/finmind/.conda/bin/python

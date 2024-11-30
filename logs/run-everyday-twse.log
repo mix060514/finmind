@@ -1,8 +1,4 @@
-Conda env in /home/mix060514/pj/finmind/.conda activated
 pipenv run python scheduler.py
 Loading .env environment variables...
-Traceback (most recent call last):
-  File "/media/mix060514/EE9E67E99E67A933/pj/finmind/scheduler.py", line 5, in <module>
-    from apscheduler.schedulers.background import BackgroundScheduler
-ModuleNotFoundError: No module named 'apscheduler'
-make: *** [Makefile:25: run-everyday-twse] Error 1
+2024-11-30 11:17:52.799 | INFO     | __main__:main:39 - sent_crawler_task
+2024-11-30 11:17:52.816 | INFO     | __main__:run_initial_task_if_needed:22 - Current time: 2024-11-30 11:17:52.816811, Target time: 2024-11-30 15:00:00
